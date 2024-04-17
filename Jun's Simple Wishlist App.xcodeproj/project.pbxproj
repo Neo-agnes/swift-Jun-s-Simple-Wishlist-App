@@ -85,11 +85,8 @@
 		543C7F6D2BCD323C00263606 = {
 			isa = PBXGroup;
 			children = (
-				54D37FA72BCF8F8F008C76C2 /* unused */,
-				54D37FA62BCF8F5E008C76C2 /* Controller */,
 				543C7F782BCD323C00263606 /* Jun's Simple Wishlist */,
-				543C7FAF2BCE5DB900263606 /* View */,
-				543C7FAC2BCE1FA700263606 /* Model */,
+				54D37FA72BCF8F8F008C76C2 /* unused */,
 				543C7F772BCD323C00263606 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,6 +106,9 @@
 			children = (
 				543C7F792BCD323C00263606 /* AppDelegate.swift */,
 				543C7F7B2BCD323C00263606 /* SceneDelegate.swift */,
+				543C7FAC2BCE1FA700263606 /* Model */,
+				543C7FAF2BCE5DB900263606 /* View */,
+				54D37FA62BCF8F5E008C76C2 /* Controller */,
 			);
 			path = "Jun's Simple Wishlist";
 			sourceTree = "<group>";
@@ -150,8 +150,8 @@
 		54D37FA62BCF8F5E008C76C2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				54369ED22BCE8B6E002ECBEB /* WishListViewController.swift */,
 				543C7F7D2BCD323C00263606 /* ViewController.swift */,
+				54369ED22BCE8B6E002ECBEB /* WishListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

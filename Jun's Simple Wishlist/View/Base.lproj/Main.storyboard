@@ -108,7 +108,6 @@
                         <outlet property="imageView" destination="NP7-gy-wQX" id="ZNb-pq-xLO"/>
                         <outlet property="priceLabel" destination="3k1-Fs-pFm" id="NeB-LQ-Gsj"/>
                         <outlet property="titleLabel" destination="KaK-mD-1mQ" id="Qdh-NS-MZ8"/>
-                        <segue destination="ZKI-Ve-Yi3" kind="show" id="lsO-yY-lXK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -116,37 +115,33 @@
             <point key="canvasLocation" x="70.992366412213741" y="-34.507042253521128"/>
         </scene>
         <!--Wish List View Controller-->
-        <scene sceneID="Qn8-Q1-gU6">
+        <scene sceneID="FkA-Ug-PtY">
             <objects>
-                <viewController id="ZKI-Ve-Yi3" customClass="WishListViewController" customModule="Jun_s_Simple_Wishlist_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1SM-ha-c9V">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                <tableViewController storyboardIdentifier="WishListViewController" id="anQ-Gh-Ppo" customClass="WishListViewController" customModule="Jun_s_Simple_Wishlist_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="crC-2X-PXg">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Eih-ge-Qq2">
-                                <rect key="frame" x="16" y="59" width="361" height="759"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="A8P-b0-Bra">
-                                        <rect key="frame" x="0.0" y="50" width="361" height="44.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A8P-b0-Bra" id="kvb-lB-6mg" customClass="product">
-                                            <rect key="frame" x="0.0" y="0.0" width="361" height="44.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="fr2-DD-Stq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Udf-gy-vut"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TqX-FH-ziQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="b5g-po-2go">
+                                <rect key="frame" x="0.0" y="50" width="393" height="44.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b5g-po-2go" id="meb-Ej-Xag">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="anQ-Gh-Ppo" id="hpa-Qm-NSy"/>
+                            <outlet property="delegate" destination="anQ-Gh-Ppo" id="gqe-RV-KSE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="eJa-hF-T9N"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I2P-EL-Spq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="762.59541984732823" y="-35.211267605633807"/>
+            <point key="canvasLocation" x="775" y="-35"/>
         </scene>
     </scenes>
     <resources>

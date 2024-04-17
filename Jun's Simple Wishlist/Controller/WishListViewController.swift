@@ -12,6 +12,7 @@ class WishListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier:"Cell")
         setProductList()
     }
     
