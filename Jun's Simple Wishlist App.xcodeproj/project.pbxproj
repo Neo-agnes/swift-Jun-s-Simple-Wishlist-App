@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54369ED32BCE8B6E002ECBEB /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54369ED22BCE8B6E002ECBEB /* WishListViewController.swift */; };
 		543C7F7A2BCD323C00263606 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C7F792BCD323C00263606 /* AppDelegate.swift */; };
 		543C7F7C2BCD323C00263606 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C7F7B2BCD323C00263606 /* SceneDelegate.swift */; };
 		543C7F7E2BCD323C00263606 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C7F7D2BCD323C00263606 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 		543C7F942BCD323E00263606 /* Jun_s_Simple_Wishlist_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C7F932BCD323E00263606 /* Jun_s_Simple_Wishlist_AppTests.swift */; };
 		543C7F9E2BCD323E00263606 /* Jun_s_Simple_Wishlist_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C7F9D2BCD323E00263606 /* Jun_s_Simple_Wishlist_AppUITests.swift */; };
 		543C7FA02BCD323E00263606 /* Jun_s_Simple_Wishlist_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C7F9F2BCD323E00263606 /* Jun_s_Simple_Wishlist_AppUITestsLaunchTests.swift */; };
+		543C7FAE2BCE507C00263606 /* RemoteProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543C7FAD2BCE507C00263606 /* RemoteProduct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		54369ED22BCE8B6E002ECBEB /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		543C7F762BCD323C00263606 /* Jun's Simple Wishlist App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jun's Simple Wishlist App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		543C7F792BCD323C00263606 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		543C7F7B2BCD323C00263606 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		543C7F992BCD323E00263606 /* Jun's Simple Wishlist AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Jun's Simple Wishlist AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		543C7F9D2BCD323E00263606 /* Jun_s_Simple_Wishlist_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jun_s_Simple_Wishlist_AppUITests.swift; sourceTree = "<group>"; };
 		543C7F9F2BCD323E00263606 /* Jun_s_Simple_Wishlist_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jun_s_Simple_Wishlist_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		543C7FAD2BCE507C00263606 /* RemoteProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteProduct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +85,11 @@
 		543C7F6D2BCD323C00263606 = {
 			isa = PBXGroup;
 			children = (
-				543C7F782BCD323C00263606 /* Jun's Simple Wishlist App */,
-				543C7F922BCD323E00263606 /* Jun's Simple Wishlist AppTests */,
-				543C7F9C2BCD323E00263606 /* Jun's Simple Wishlist AppUITests */,
+				54D37FA72BCF8F8F008C76C2 /* unused */,
+				54D37FA62BCF8F5E008C76C2 /* Controller */,
+				543C7F782BCD323C00263606 /* Jun's Simple Wishlist */,
+				543C7FAF2BCE5DB900263606 /* View */,
+				543C7FAC2BCE1FA700263606 /* Model */,
 				543C7F772BCD323C00263606 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,19 +104,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		543C7F782BCD323C00263606 /* Jun's Simple Wishlist App */ = {
+		543C7F782BCD323C00263606 /* Jun's Simple Wishlist */ = {
 			isa = PBXGroup;
 			children = (
 				543C7F792BCD323C00263606 /* AppDelegate.swift */,
 				543C7F7B2BCD323C00263606 /* SceneDelegate.swift */,
-				543C7F7D2BCD323C00263606 /* ViewController.swift */,
-				543C7F7F2BCD323C00263606 /* Main.storyboard */,
-				543C7F852BCD323E00263606 /* Assets.xcassets */,
-				543C7F872BCD323E00263606 /* LaunchScreen.storyboard */,
-				543C7F8A2BCD323E00263606 /* Info.plist */,
-				543C7F822BCD323C00263606 /* Jun_s_Simple_Wishlist_App.xcdatamodeld */,
 			);
-			path = "Jun's Simple Wishlist App";
+			path = "Jun's Simple Wishlist";
 			sourceTree = "<group>";
 		};
 		543C7F922BCD323E00263606 /* Jun's Simple Wishlist AppTests */ = {
@@ -128,6 +128,44 @@
 				543C7F9F2BCD323E00263606 /* Jun_s_Simple_Wishlist_AppUITestsLaunchTests.swift */,
 			);
 			path = "Jun's Simple Wishlist AppUITests";
+			sourceTree = "<group>";
+		};
+		543C7FAC2BCE1FA700263606 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				543C7F822BCD323C00263606 /* Jun_s_Simple_Wishlist_App.xcdatamodeld */,
+				543C7FAD2BCE507C00263606 /* RemoteProduct.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		543C7FAF2BCE5DB900263606 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				543C7F7F2BCD323C00263606 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54D37FA62BCF8F5E008C76C2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				54369ED22BCE8B6E002ECBEB /* WishListViewController.swift */,
+				543C7F7D2BCD323C00263606 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		54D37FA72BCF8F8F008C76C2 /* unused */ = {
+			isa = PBXGroup;
+			children = (
+				543C7F8A2BCD323E00263606 /* Info.plist */,
+				543C7F9C2BCD323E00263606 /* Jun's Simple Wishlist AppUITests */,
+				543C7F922BCD323E00263606 /* Jun's Simple Wishlist AppTests */,
+				543C7F872BCD323E00263606 /* LaunchScreen.storyboard */,
+				543C7F852BCD323E00263606 /* Assets.xcassets */,
+			);
+			path = unused;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +300,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				543C7F842BCD323C00263606 /* Jun_s_Simple_Wishlist_App.xcdatamodeld in Sources */,
+				543C7FAE2BCE507C00263606 /* RemoteProduct.swift in Sources */,
 				543C7F7E2BCD323C00263606 /* ViewController.swift in Sources */,
 				543C7F7A2BCD323C00263606 /* AppDelegate.swift in Sources */,
 				543C7F7C2BCD323C00263606 /* SceneDelegate.swift in Sources */,
+				54369ED32BCE8B6E002ECBEB /* WishListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +487,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Jun's Simple Wishlist App/Info.plist";
+				INFOPLIST_FILE = unused/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -474,7 +514,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Jun's Simple Wishlist App/Info.plist";
+				INFOPLIST_FILE = unused/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
