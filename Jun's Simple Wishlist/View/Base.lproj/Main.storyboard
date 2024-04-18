@@ -40,8 +40,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIV-YK-oN2">
-                                <rect key="frame" x="207" y="732" width="170" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIV-YK-oN2">
+                                <rect key="frame" x="207" y="731.66666666666663" width="170" height="34.333333333333371"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="f0y-X7-CCn"/>
+                                </constraints>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="다른 상품 보기">
@@ -53,8 +56,11 @@
                                     <action selector="nextBT:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rRo-qT-yR6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4b-kG-0Af">
-                                <rect key="frame" x="16" y="732" width="170" height="41"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4b-kG-0Af">
+                                <rect key="frame" x="16" y="731.66666666666663" width="170" height="34.333333333333371"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="7LJ-Jy-IhX"/>
+                                </constraints>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="위시 리스트 담기">
@@ -141,7 +147,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2P-EL-Spq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="775" y="-35"/>
+            <point key="canvasLocation" x="773.28244274809163" y="-35.211267605633807"/>
         </scene>
     </scenes>
     <resources>

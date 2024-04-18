@@ -29,11 +29,11 @@ class ViewController: UIViewController {
             }
             
             // 위에서 nil로 이미지를 설정한 내용의 대한 이미지 데이터화 및 이미지->UI이미지로 변경->표출 이 과정들을 글로벌로 main 스레드에서 작동하지 않도록 감싸줍니다.
-            // data 타입은 data입니다. 그렇기 때문에 'DietProduct'의 섬네일이 URL로 넘어올 것이며 때문에 contentsOf의 thumbnail(섬네일)이 URL로 넘어 오는 것입니다. 때문에 contentsOf에 해당하는 URL을 담아 데이터화 시켜줍니다. Data 타입으로 변환을 하고 Data을 가지고 UI 이미지로 변환을 해주는 과정입니다. 그래서 아래 이미지의 타입을 보면, UIImage로 변환을 해주되 data에 해당 URL을 가지고 만들어진 데이터를 넘겨주어 UIImage를 구현할 수 있는 것입니다.
+            // data 타입은 data입니다. 그렇기 때문에 'DietProduct'의 섬네일이 URL로 넘어올 것이며 때문에 contentsOf의 thumbnail(섬네일)이 URL로 넘어 오는 것입니다. 때문에 contentsOf에 해당하는 URL을 담아 데이터화 시켜줍니다. Data 타입으로 변환을 하고 Data을 가지고 UI 이미지로 변환을 해주는 과정입니다. 그래서 아래 이미지의 타입을 보면, UIImage로 변환을 해주되 data에 해당 URL을 가지고 만들어진 데이터를 넘겨주어 UIImage를 구현할 수 있는 것.
             DispatchQueue.global().async { [weak self] in
                 if let data = try? Data(contentsOf: currentProduct.thumbnail),
                    let image = UIImage(data: data) {
-                    DispatchQueue.main.async { self?.imageView.image = image }// 그렇게 된 이미지를 다시 main 스레드를 통해 UI에 보여 주어야 하니 imageView에 image는 위에서 변환된 이미지를 올려주는 것입니다. 이는 반드시 main 스레드에서 해주어야 합니다.
+                    DispatchQueue.main.async { self?.imageView.image = image }// 그렇게 된 이미지를 다시 main 스레드를 통해 UI에 보여 주어야 하니 imageView에 image는 위에서 변환된 이미지를 올려주는 것입니다. 이는 반드시 main 스레드에서 해주어야 함
                 }
             }
         }
@@ -95,17 +95,23 @@ class ViewController: UIViewController {
     }
     // currentProduct 가져와서 코어데이터에 저장
     func saveWishProduct() {
+        // CoreData의 관리 객체 컨텍스트를 가져오고 없다면 메서드를 종료
         guard let context = self.firstContainer?.viewContext else { return }
         
+        // 현재 상품이 nil이 아닌지 확인하고 nil값이라면 메서드를 종료
         guard let currentProduct = self.currentProduct else { return }
         
+        // CoreData에 새로운 Product 인스턴스를 생성하는 변수를 만들고
         let wishProduct = Product(context: context)
         
-        wishProduct.id = Int64(currentProduct.id)
-        wishProduct.title = currentProduct.title
-        wishProduct.price = currentProduct.price
+        // 새로운 Product 인스턴스에 현재 상품의 정보를 설정
+        wishProduct.id = Int64(currentProduct.id) // 현재 상품의 id를 설정
+        wishProduct.title = currentProduct.title // 현재 상품의 타이틀을 설정
+        wishProduct.price = currentProduct.price // 현재 상품의 가격을 설정
         
+        // 변경사항을 저장하고 혹시나 오류가 발생하더라도 무시하도록 명령
         try? context.save()
     }
+
 }
 
