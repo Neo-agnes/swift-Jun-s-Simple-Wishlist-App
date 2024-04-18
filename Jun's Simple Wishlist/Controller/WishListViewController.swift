@@ -22,8 +22,19 @@ class WishListViewController: UITableViewController {
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         // CoreData에서 상품 정보를 불러와서 productList 변수에 저장하는 메서드를 호출
         setProductList()
+        
+        // 새로 고침을 작동 할 수 있도록 구현 해보자
+        // UIRefreshControl을 생성
+        let refreshControl = UIRefreshControl()
+        
+        // 당겨서 새로고침시 호출될 메서드를 addTarget으로 추가
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        
+        // 테이블 뷰의 refreshControl 속성에 UIRefreshControl을 할당하여 연결
+        self.refreshControl = refreshControl
+        
+        
     }
-
     
     // CoreData에서 상품 정보를 불러와, productList 변수에 저장
     private func setProductList() {
@@ -39,7 +50,7 @@ class WishListViewController: UITableViewController {
             self.productList = productList // 'productList' 배열에 결과를 저장
         }
     }
-
+    
     
     // 'productList'의 'count'를 반환
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,26 +76,26 @@ class WishListViewController: UITableViewController {
         // Lv4 삭제 버튼 구현
         // 삭제 버튼을 생성
         let deleteButton = UIButton(type: .system)
-
+        
         // 버튼에 "삭제"라는 텍스트를 설정
         deleteButton.setTitle("삭제", for: .normal)
-
+        
         // 버튼의 프레임을 설정 (위치 및 크기)
         deleteButton.frame = CGRect(x: 0, y: 0, width: 60, height: 30)
-
+        
         // 버튼에 액션을 추가 deleteButtonTapped(_:) 메서드가 호출되도록 설정
         deleteButton.addTarget(self, action: #selector(deleteButtonTapped(_:)), for: .touchUpInside)
-
+        
         // 셀의 accessoryView로 삭제 버튼을 설정, accessoryView는 셀의 오른쪽에 추가되는 보조 뷰
         cell.accessoryView = deleteButton
-
+        
         // 구성된 셀을 반환
         return cell
-
+        
     }
     
-//     Lv4 삭제 버튼 추가
-//     삭제 버튼을 눌렀을 때의 동작
+    //     Lv4 삭제 버튼 추가
+    //     삭제 버튼을 눌렀을 때의 동작
     @objc func deleteButtonTapped(_ sender: UIButton) {
         // 버튼을 포함한 셀의 indexPath를 찾는다
         guard let cell = sender.superview as? UITableViewCell, // 버튼의 상위 뷰가 UITableViewCell인지 확인
@@ -110,8 +121,11 @@ class WishListViewController: UITableViewController {
             }
         }
     }
-
     
-    //삭제 구현 다시 해보는 방법 UIKit 사용
-    
+    // 새로고침 동작
+    @objc private func refresh(_ sender: Any) {
+        setProductList() // 새로고침이 발생하면 상품 목록을 업데이트하고
+        self.tableView.reloadData() // 테이블 뷰를 다시 로드하여 변경된 데이터를 반영 후
+        self.refreshControl?.endRefreshing() // UIRefreshControl의 새로고침 상태를 종료
+    }
 }
